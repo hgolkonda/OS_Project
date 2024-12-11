@@ -1,8 +1,8 @@
 
-# Automation OS
+# Operating System for Task Automation
 
 ## Overview
-**Automation OS** is a lightweight and modular operating system designed to simplify task automation and management. It provides a command-line interface for managing repetitive tasks, handling files, managing memory dynamically, and responding to system events using interrupt handling.
+**Operating System for Task Automation** is a lightweight and modular operating system designed to simplify task automation and management. It provides a command-line interface for managing repetitive tasks, handling files, managing memory dynamically, and responding to system events using interrupt handling.
 
 ## Features
 ### 1. **Task Management**
