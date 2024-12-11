@@ -1,0 +1,15 @@
+{
+    "task_queue": [
+        {
+            "name": "task1",
+            "interval": 10,
+            "next_run": 1733879464.026001
+        },
+        {
+            "name": "task1",
+            "interval": 10,
+            "next_run": 1733879967.04044
+        }
+    ],
+    "scheduled_tasks": []
+}

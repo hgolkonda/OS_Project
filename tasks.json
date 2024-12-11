@@ -1,0 +1,10 @@
+[
+    {
+        "name": "process1",
+        "interval": 10
+    },
+    {
+        "name": "process2",
+        "interval": 15
+    }
+]
