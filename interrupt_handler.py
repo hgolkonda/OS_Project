@@ -1,6 +1,5 @@
 import threading
 import time
-import os
 
 
 class InterruptHandler:
@@ -9,7 +8,7 @@ class InterruptHandler:
         self.interrupts = {}  # Dictionary to store interrupt types and their handlers
         self.running = False  # Flag to control the interrupt loop
         self.lock = threading.Lock()  # Thread safety
-        self.timer_interval = 5  # Default interval for timer interrupts (in seconds)
+        self.timer_interval = 5  # Default timer interval in seconds
 
     def register_interrupt(self, interrupt_type, handler):
         """Register a handler for a specific interrupt type."""
@@ -27,10 +26,10 @@ class InterruptHandler:
                 print(f"InterruptHandler: Unknown interrupt '{interrupt_type}'.")
 
     def start(self):
-        """Start the interrupt loop."""
+        """Start the interrupt loop in a separate thread."""
         if not self.running:
             self.running = True
-            threading.Thread(target=self._timer_loop, daemon=True).start()
+            threading.Thread(target=self._interrupt_loop, daemon=True).start()
             print("InterruptHandler: Interrupt loop started.")
 
     def stop(self):
@@ -38,7 +37,7 @@ class InterruptHandler:
         self.running = False
         print("InterruptHandler: Interrupt loop stopped.")
 
-    def _timer_loop(self):
+    def _interrupt_loop(self):
         """Internal loop to trigger timer interrupts periodically."""
         while self.running:
             time.sleep(self.timer_interval)  # Wait for the timer interval

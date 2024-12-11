@@ -33,6 +33,15 @@ class Shell:
                 self.process_manager.remove_task(task_name)
             elif action == "list":
                 self.process_manager.list_tasks()
+            elif action == "move" and len(command) == 3:
+                source = command[1]
+                destination = command[2]
+                self.file_system.move(source, destination)
+            elif action == "rename" and len(command) == 3:
+                old_name = command[1]
+                new_name = command[2]
+                self.file_system.rename(old_name, new_name)
+
             elif action == "run":
                 self.process_manager.scheduler()
             elif action == "memory":
